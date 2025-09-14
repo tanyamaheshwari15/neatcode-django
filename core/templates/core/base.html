@@ -14,7 +14,6 @@
       crossorigin="anonymous"
     />
     <style>
-      .nav-link.active,
       .navbar-brand.active {
         color: orange !important;
       }
@@ -49,11 +48,11 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Problems</a>
+              <a class="nav-link active" href="#">Problems</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="">Dashboard</a>
+              <a class="nav-link active" href="{% url 'dashboard' %}">Dashboard</a>
             </li>
             {% endif %}
           </ul>
@@ -72,14 +71,14 @@
                   {{ user.username }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                   <li><a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a></li>
                   <li><a class="dropdown-item" href="#">Profile</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
                     <a
                       class="dropdown-item text-warning"
-                      href="{% url 'logout' %}"
-                      >Logout</a
-                    >
+                      href="{% url 'logout' %}">Logout
+                    </a>
                   </li>
                 </ul>
               </li>

@@ -37,3 +37,6 @@ def logout_view(request):
     logout(request)
     messages.info(request, "You have been logged out.")
     return redirect('home')
+
+def dashboard(request):
+    return render(request, 'core/dashboard.html')
