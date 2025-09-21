@@ -40,3 +40,6 @@ def logout_view(request):
 
 def dashboard(request):
     return render(request, 'core/dashboard.html')
+
+def profile(request):
+    return render(request, 'core/profile.html')
