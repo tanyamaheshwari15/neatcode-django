@@ -1,53 +1,96 @@
-{% extends "core/base.html" %}
-{% block title %}Profile - NeatCode{% endblock %}
+{% extends "core/base.html" %} {% block title %}Profile - NeatCode{% endblock %}
 {% block content %}
-<div class="container mt-5">
-   <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3>Profile</h3>
-        <a href="{% url 'home' %}" class="btn btn-warning me-4">Go to Home</a>
-    </div>
-    <div class="row text-center g-4">
-    <div class="col-3">
-      <div class="card shadow-sm h-100 border-primary">
-        <div class="card-body">
-          <h6 class="card-title text-primary fw-bold">150</h6>
-          <p class="card-text">Total Questions</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card shadow-sm h-100 border-success">
-        <div class="card-body">
-          <h6 class="card-title text-success fw-bold">80</h6>
-          <p class="card-text">Easy Questions</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card shadow-sm h-100 border-info">
-        <div class="card-body">
-          <h6 class="card-title text-info fw-bold">50</h6>
-          <p class="card-text">Medium Questions</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card shadow-sm h-100 border-danger">
-        <div class="card-body">
-          <h6 class="card-title text-danger fw-bold">20</h6>
-          <p class="card-text">Hard Questions</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Submissions -->
 <div class="mt-5 container">
   <div class="row g-4">
-    
-    <!-- First Card: Big Left Card -->
-    <div class="col-md-7">
+    <!-- Left Column (smaller now) -->
+    <div class="col-md-5">
+      <div class="card mb-4">
+        <div class="card-body text-center">
+          <div>
+            <img
+              src="https://shayari-in-english.com/wp-content/uploads/2025/07/Stylish-DP-for-Girls.jpg"
+              alt="avatar"
+              class="rounded-circle img-fluid"
+              style="width: 150px; height: 150px; object-fit: cover"
+            />
+            <h5>NeatCode</h5>
+            <p class="text-muted mb-1">neetcode@example.com 
+              <br> Member since 01-01-2020
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <h5 class="card-header">Quick Stats</h5>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col-4">
+              <div class="card shadow-sm h-100">
+                <div class="card-body">
+                  <h6 class="card-title text-success fw-bold">1</h6>
+                  <p class="card-text">Solved</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card shadow-sm h-100">
+                <div class="card-body">
+                  <h6 class="card-title text-success fw-bold">3</h6>
+                  <p class="card-text">Submissions</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card shadow-sm h-100">
+                <div class="card-body">
+                  <h6 class="card-title text-success fw-bold">15%</h6>
+                  <p class="card-text">Success Rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column (bigger now) -->
+    <div class="col-md-7 d-flex flex-column gap-4">
+      <!-- Solved Problems -->
+      <div class="card">
+        <h5 class="card-header">Solved Problems</h5>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col-4">
+              <div class="card shadow-sm h-100 border-info">
+                <div class="card-body">
+                  <h6 class="card-title text-info fw-bold">80</h6>
+                  <p class="card-text">Easy</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card shadow-sm h-100 border-warning">
+                <div class="card-body">
+                  <h6 class="card-title text-warning fw-bold">50</h6>
+                  <p class="card-text">Medium</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card shadow-sm h-100 border-danger">
+                <div class="card-body">
+                  <h6 class="card-title text-danger fw-bold">20</h6>
+                  <p class="card-text">Hard</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Submissions -->
       <div class="card mb-4">
         <h5 class="card-header">Recent Submissions</h5>
         <div class="card-body">
@@ -73,7 +116,9 @@
                 <tr>
                   <th scope="row">Longest Substring</th>
                   <td>Java</td>
-                  <td><span class="badge bg-warning text-dark">Pending</span></td>
+                  <td>
+                    <span class="badge bg-warning text-dark">Pending</span>
+                  </td>
                   <td>—</td>
                   <td>13-09-2025</td>
                 </tr>
@@ -89,32 +134,45 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Right Column: Second and Third Cards -->
-    <div class="col-md-5 d-flex flex-column gap-4">
-      <!-- Second Card -->
+      <!-- Account Information -->
       <div class="card">
-        <h5 class="card-header">Solved Problems</h5>
+        <h5 class="card-header">Account Information</h5>
         <div class="card-body">
-          
-        </div>
-      </div>
-
-      <!-- Third Card -->
-      <div class="card">
-        <h5 class="card-header">Quick Actions</h5>
-        <div class="card-body">
-          <div class="btn-group-vertical w-100" role="group" aria-label="Quick Actions">
-            <a href="#" class="btn btn-outline-info mb-2">Browse All Problems</a>
-            <a href="#" class="btn btn-outline-success mb-2">Easy Questions</a>
-            <a href="#" class="btn btn-outline-warning mb-2">Medium Questions</a>
-            <a href="#" class="btn btn-outline-danger mb-2">Hard Questions</a>
+          <div class="row">
+            <div class="col-sm-6">
+              <h6 class="text-muted">Username</h6>
+              <p class="mb-3">neetcode</p>
             </div>
+            <div class="col-sm-6">
+              <h6 class="text-muted">Email</h6>
+              <p class="mb-3">neetcode@example.com</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <h6 class="text-muted">Date Joined</h6>
+              <p class="mb-3">01-01-2020</p>
+            </div>
+            <div class="col-sm-6">
+              <h6 class="text-muted">Last Login</h6>
+              <p class="mb-3">14-09-2025</p>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+            <a href="{% url 'dashboard' %}" class="btn btn-warning text-light"
+              >Dashboard</a
+            >
+            <a href="#" class="btn btn-outline-primary">Browse Problems</a>
+            <a href="{% url 'logout' %}" class="btn btn-outline-danger"
+              >Logout</a
+            >
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
