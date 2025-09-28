@@ -43,3 +43,6 @@ def dashboard(request):
 
 def profile(request):
     return render(request, 'core/profile.html')
+
+def problem_list(request):
+    return render(request, 'core/problem_list.html')

@@ -1,0 +1,140 @@
+{% extends "core/base.html" %}
+{% block title %}Problems - NeatCode{% endblock %}
+{% block content %}
+<div class="container mt-5">
+   <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Problems</h3>
+        <a href="{% url 'home' %}" class="btn btn-outline-info me-4">Back to Home</a>
+    </div>
+   <div class="d-flex flex-column gap-4">
+      <!-- Filter Card -->
+      <div class="card mb-4">
+  <div class="card-body">
+    <div class="row text-center g-3">
+      <!-- Search -->
+      <div class="col-12 col-md-3">
+        <h6 class="text-muted">Search</h6>
+        <input type="text" class="form-control" placeholder="Search problems...">
+      </div>
+
+      <!-- Difficulty Dropdown -->
+      <div class="col-12 col-md-3">
+        <h6 class="text-muted">Difficulty</h6>
+        <div class="dropdown w-100">
+          <button class="form-control text-start dropdown-toggle" 
+                  type="button" 
+                  id="difficultyDropdown" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            All
+          </button>
+          <ul class="dropdown-menu w-100" aria-labelledby="difficultyDropdown">
+            <li><a class="dropdown-item" href="#">Easy</a></li>
+            <li><a class="dropdown-item" href="#">Medium</a></li>
+            <li><a class="dropdown-item" href="#">Hard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sort By Dropdown -->
+      <div class="col-12 col-md-3">
+        <h6 class="text-muted">Sort By</h6>
+        <div class="dropdown w-100">
+          <button class="form-control text-start dropdown-toggle" 
+                  type="button" 
+                  id="sortDropdown" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+            Newest
+          </button>
+          <ul class="dropdown-menu w-100" aria-labelledby="sortDropdown">
+            <li><a class="dropdown-item" href="#">Newest</a></li>
+            <li><a class="dropdown-item" href="#">Oldest</a></li>
+            <li><a class="dropdown-item" href="#">Most Solved</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Filter Button -->
+      <div class="col-12 col-md-3 d-flex align-items-end">
+        <button class="btn btn-warning w-100">Filter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Submissions -->
+<div class="mt-5 container">
+  <div class="row g-4">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-body p-0">
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Two Sum</h5>
+                <span class="badge bg-success">Easy</span>
+              </div>
+              <p class="mb-1">Given an array of integers, return indices of the two numbers such that they add up...</p>
+              <small>Acceptance Rate: 45%</small>
+            </a>
+
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Longest Substring</h5>
+                <span class="badge bg-warning text-dark">Medium</span>
+              </div>
+              <p class="mb-1">Find the length of the longest substring without repeating characters...</p>
+              <small>Acceptance Rate: 38%</small>
+            </a>
+
+            <a href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Median of Arrays</h5>
+                <span class="badge bg-danger">Hard</span>
+              </div>
+              <p class="mb-1">Find the median of two sorted arrays...</p>
+              <small>Acceptance Rate: 30%</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Difficulty Dropdown
+  const difficultyDropdown = document.getElementById('difficultyDropdown');
+  const difficultyItems = document.querySelectorAll('#difficultyDropdown + .dropdown-menu .dropdown-item');
+
+  difficultyItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      difficultyDropdown.textContent = this.textContent; // update button text
+      // Optional: mark active
+      difficultyItems.forEach(i => i.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Sort Dropdown
+  const sortDropdown = document.getElementById('sortDropdown');
+  const sortItems = document.querySelectorAll('#sortDropdown + .dropdown-menu .dropdown-item');
+
+  sortItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      sortDropdown.textContent = this.textContent; // update button text
+      // Optional: mark active
+      sortItems.forEach(i => i.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
+</script>
+{% endblock %}
+
